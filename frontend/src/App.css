@@ -1,0 +1,150 @@
+/* Configuração geral do corpo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8f9fa, #f1f3f5);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Estilização de títulos */
+h1, h2 {
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Estilização do formulário */
+form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 840px;
+  margin-bottom: 20px;
+}
+
+/* Estilização dos campos de entrada */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efeito ao focar nos campos */
+input:focus, textarea:focus, select:focus {
+  border-color: #80b3ff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+/* Botões gerais */
+button {
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Botão de adicionar */
+button[type="submit"] {
+  background-color: #5bc0de;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(91, 192, 222, 0.2);
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Tabela de produtos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid #e1e7ed;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Cabeçalho da tabela */
+th {
+  background-color: #6c757d;
+  color: white;
+  font-weight: 600;
+}
+
+/* Linhas da tabela */
+td {
+  background-color: #f8f9fa;
+}
+
+/* Botão de deletar */
+.delete-btn {
+  background-color: #f28c8c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+/* Botão de atualizar */
+.update-btn {
+  background-color: #81c784;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.update-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Container de ações */
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
