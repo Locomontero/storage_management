@@ -12,7 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.boot.version>2.6.4</spring.boot.version> <!-- Defina a versão central do Spring Boot -->
+        <spring.boot.version>2.6.4</spring.boot.version>
     </properties>
 
     <dependencyManagement>
@@ -20,7 +20,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version> <!-- Referencia a versão central -->
+                <version>${spring.boot.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -51,9 +51,16 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version> <!-- Ou a versão mais recente -->
-            <scope>provided</scope> <!-- Não precisa ser incluído no arquivo JAR final -->
+            <version>1.18.24</version>
+            <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>me.paulschwarz</groupId>
+            <artifactId>spring-dotenv</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -62,7 +69,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version> <!-- Use a versão central -->
+                <version>${spring.boot.version}</version>
             </plugin>
         </plugins>
     </build>
