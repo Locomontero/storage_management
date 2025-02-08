@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import EditProduct from './EditProduct';
 
-const ProductList = ({ products, onDelete }) => {
+const ProductList = ({ products, onDelete, onUpdate }) => {
+  const [editingProduct, setEditingProduct] = useState(null);
+
   return (
     <div>
       <h2>Product List</h2>
@@ -25,7 +28,7 @@ const ProductList = ({ products, onDelete }) => {
                 <td>{product.categoryPath}</td>
                 <td>{product.available ? 'Yes' : 'No'}</td>
                 <td className="actions">
-                  <button className="update-btn">Update</button>
+                  <button className="update-btn" onClick={() => setEditingProduct(product)}>Update</button>
                   <button className="delete-btn" onClick={() => onDelete(product.id)}>Delete</button>
                 </td>
               </tr>
@@ -37,6 +40,14 @@ const ProductList = ({ products, onDelete }) => {
           )}
         </tbody>
       </table>
+
+      {editingProduct && (
+        <EditProduct
+          product={editingProduct}
+          onUpdate={onUpdate}
+          onClose={() => setEditingProduct(null)}
+        />
+      )}
     </div>
   );
 };

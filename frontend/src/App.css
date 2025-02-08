@@ -1,7 +1,9 @@
-/* Configuração geral do corpo */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Config body */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f8f9fa, #f1f3f5);
+  font-family: "Roboto", Roboto Slab;
+  background-color: #f8f9fa;
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,57 +11,70 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-}
+ }
 
-/* Estilização de títulos */
-h1, h2 {
+/* Title */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
   color: #333;
-  margin-bottom: 15px;
   text-align: center;
-  font-weight: 500;
+  margin-bottom: 15px;
 }
 
-/* Container principal */
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+/* Main conteiner */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   padding: 20px;
 }
 
-/* Estilização do formulário */
+/* Form configuration */
 form {
-  background: #ffffff;
+  background-color: #f8f9fa;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 840px;
+  width: 820px;
   margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 10px;
+  padding: 10px;
 }
 
-/* Estilização dos campos de entrada */
+/* textarea config */
 input, textarea, select {
-  width: 100%;
+  width: 97%;
   padding: 10px;
   border: 2px solid #ced4da;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 14px;
   transition: all 0.3s ease-in-out;
 }
 
-/* Efeito ao focar nos campos */
+/* Focus config */
 input:focus, textarea:focus, select:focus {
   border-color: #80b3ff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
   outline: none;
 }
 
-/* Botões gerais */
+/* Btn */
 button {
   padding: 12px;
   border: none;
@@ -71,7 +86,7 @@ button {
   text-transform: uppercase;
 }
 
-/* Botão de adicionar */
+/* Btn add */
 button[type="submit"] {
   background-color: #5bc0de;
   color: white;
@@ -83,14 +98,17 @@ button:hover {
   transform: scale(1.02);
 }
 
-/* Tabela de produtos */
+/* Produt Table */
 table {
-  width: 100%;
+  width: 98%;
   border-collapse: collapse;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
   background: white;
   border-radius: 8px;
   overflow: hidden;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 th, td {
@@ -127,7 +145,7 @@ td {
   transform: scale(1.05);
 }
 
-/* Botão de atualizar */
+/* Update btn */
 .update-btn {
   background-color: #81c784;
   color: white;
@@ -142,9 +160,102 @@ td {
   transform: scale(1.05);
 }
 
-/* Container de ações */
+/* Container actions */
 .actions {
   display: flex;
   gap: 8px;
   justify-content: center;
 }
+
+/* Modal update */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 600px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-content button {
+  padding: 8px;
+  border: none;
+  background-color: #5bc0de;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.modal-content button:hover {
+  background-color: #81c784;
+}
+
+/* Footer Style */
+footer {
+  height: 300px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-content {
+  z-index: 5;
+  color: grey;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+

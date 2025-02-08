@@ -3,6 +3,7 @@ import AddProduct from './components/AddProduct';
 import ProductList from './components/ProductList';
 import './App.css';
 
+
 const App = () => {
   const [products, setProducts] = useState([]);
 
@@ -21,19 +22,30 @@ const App = () => {
   };
 
   const deleteProduct = async (id) => {
-    await fetch(`/api/products/${id}`, {
+    await fetch(`http://localhost:8080/api/products/${id}`, {
       method: 'DELETE',
     });
     fetchProducts();
   };
 
+  const updateProduct = () => {
+    fetchProducts();
+  };
+
   return (
-    <div>
-      <h1>Storage Management</h1>
-      <AddProduct onAdd={addProduct} />
-      <ProductList products={products} onDelete={deleteProduct} />
-    </div>
-  );
+      <div>
+        <h1>Storage Management</h1>
+        <div className="main-content">
+          <AddProduct onAdd={addProduct} />
+          <ProductList products={products} onDelete={deleteProduct} />
+        </div>
+        <footer>
+          <div className="footer-content">
+            <p>© 2025 QIMA Storage Management - All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    );
 };
 
 export default App;
