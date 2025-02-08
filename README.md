@@ -13,6 +13,12 @@ This is a product storage management project. The system allows saving, editing,
 - **ModelMapper**: Library for converting between entities and DTOs (Data Transfer Objects), making communication between application layers easier.
 - **Maven**: Dependency management tool used to configure and manage project libraries.
 
+### Frontend:
+- **React**: Frontend library used to build the user interface of the application.
+- **CSS**: Stylesheets used for styling the frontend components.
+- **Axios**: HTTP client for making requests to the backend API.
+- **React Hooks**: State management and lifecycle methods used in functional components.
+
 ## Features
 
 - **Product Management**: The system allows adding, editing, and listing products with their respective details (name, description, price, availability, and category).
