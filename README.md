@@ -1,5 +1,5 @@
 # Storage Management
-![Minha Imagem](image/store_management_image.png)
+![Minha Imagem](/image_Readme/Login_QIMA.png)
 
 This is a product storage management project. The system allows saving, editing, and listing products, with related categories and their hierarchical paths. The backend was developed using Java 17, Spring Boot, JPA with PostgreSQL, and other libraries to facilitate development.
 
