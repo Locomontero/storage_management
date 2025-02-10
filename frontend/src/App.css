@@ -118,19 +118,19 @@ th, td {
   font-size: 14px;
 }
 
-/* Cabeçalho da tabela */
+/* Table Header */
 th {
   background-color: #6c757d;
   color: white;
   font-weight: 600;
 }
 
-/* Linhas da tabela */
+/* Table lines */
 td {
   background-color: #f8f9fa;
 }
 
-/* Botão de deletar */
+/* Btn delete */
 .delete-btn {
   background-color: #f28c8c;
   color: white;
@@ -301,6 +301,7 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
 
 
 

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import QIMA from '../image/QIMA.jpg';
+import '../css/LoginPage.css';
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -19,48 +21,47 @@ const LoginPage = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Erro ao fazer login. Verifique usuário e senha.");
+        throw new Error("Error! Check username and password");
       }
 
       const token = await response.text();
 
       if (!token || token.startsWith("<")) {
-        throw new Error("Resposta inesperada do servidor.");
+        throw new Error("Unexpected server response.");
       }
 
       localStorage.setItem("token", token);
-      console.log("Login bem-sucedido. Token salvo!");
+      console.log("Login successful. Token saved!");
 
-      // 🚀 Redirecionamento corrigido
       navigate("/", { replace: true });
 
     } catch (error) {
-      console.error("Erro ao fazer login:", error.message);
+      console.error("Error when logging in:", error.message);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
-};
+      <div className="login-container" style={{ backgroundImage: `url(${QIMA})` }}>
+        <form onSubmit={handleSubmit} className="login-form">
+          <h2>Login</h2>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    );
+  };
 
 export default LoginPage;
